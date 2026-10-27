@@ -1,0 +1,171 @@
+export interface MultiplierRecord {
+  benefit: string;
+  scenario: string;
+  formula: string;
+  multiplierDecimal: number;
+  explanation: string;
+}
+
+export const LABOR_BENEFITS_MULTIPLIER_LIST: MultiplierRecord[] = [
+  {
+    benefit: 'Hourly Pay',
+    scenario: 'Standard Rate per Hour',
+    formula: 'Daily Wage / 8',
+    multiplierDecimal: 0.125,
+    explanation: 'Basic equivalent hourly rate derived from normal 8-hour workday.',
+  },
+  {
+    benefit: 'Daily Pay',
+    scenario: 'From Monthly Wage (365 factor)',
+    formula: 'Monthly Pay x 12 / 365',
+    multiplierDecimal: 1.0,
+    explanation: 'Standard formula for monthly-paid employees considering all calendar days.',
+  },
+  {
+    benefit: 'Monthly Pay',
+    scenario: 'From Daily Wage Rate',
+    formula: 'Wage Rate x 365 / 12',
+    multiplierDecimal: 1.0,
+    explanation: 'Standard monthly conversion (employers may also use 304 factor based on leaves and rest days).',
+  },
+  {
+    benefit: 'Overtime Pay',
+    scenario: 'On a Regular Work Day',
+    formula: 'Hourly Rate x 125% x number of OT hours',
+    multiplierDecimal: 1.25,
+    explanation: 'Overtime beyond 8 hours on a scheduled ordinary workday (25% premium).',
+  },
+  {
+    benefit: 'Overtime Pay',
+    scenario: 'On a Rest Day or Holiday',
+    formula: 'Hourly Rate x 130% (OT rate) x number of OT hours',
+    multiplierDecimal: 1.30,
+    explanation: 'Overtime performed on a non-working day applies 30% additional on top of the non-working day rate.',
+  },
+  {
+    benefit: 'Rest Day',
+    scenario: 'Worked on a Rest Day (first 8 hrs)',
+    formula: 'Daily Rate x 130%',
+    multiplierDecimal: 1.30,
+    explanation: '100% basic salary + 30% premium pay for working on scheduled weekly rest day.',
+  },
+  {
+    benefit: 'Holiday Pay',
+    scenario: 'On a Special Holiday (first 8 hrs)',
+    formula: 'Daily Rate x 130%',
+    multiplierDecimal: 1.30,
+    explanation: 'Worked Special Non-Working Day entitles worker to 130% of daily rate.',
+  },
+  {
+    benefit: 'Holiday Pay',
+    scenario: 'On a Special Holiday AND Rest Day',
+    formula: 'Daily Rate x 150%',
+    multiplierDecimal: 1.50,
+    explanation: 'Worked Special Day which coincides with employee scheduled rest day gives 150% daily rate.',
+  },
+  {
+    benefit: 'Holiday Pay',
+    scenario: 'Unworked Regular Holiday',
+    formula: '100% Daily Wage',
+    multiplierDecimal: 1.00,
+    explanation: 'Day pay given by law even if employee does not work on a regular holiday (if present or on leave with pay on preceding day).',
+  },
+  {
+    benefit: 'Holiday Pay',
+    scenario: 'Worked Regular Holiday (first 8 hrs)',
+    formula: 'Daily Rate x 200%',
+    multiplierDecimal: 2.00,
+    explanation: 'Double pay: 200% for the first eight hours of regular work time.',
+  },
+  {
+    benefit: 'Holiday Pay',
+    scenario: 'Worked Regular Holiday on a Rest Day',
+    formula: 'Daily Rate x 260%',
+    multiplierDecimal: 2.60,
+    explanation: '200% regular holiday rate + 30% premium of 200% (60%) = 260% total daily rate.',
+  },
+  {
+    benefit: 'Holiday Pay',
+    scenario: 'Worked Double Holiday (2 Regular Holidays in one day)',
+    formula: 'Daily Rate x 300%',
+    multiplierDecimal: 3.00,
+    explanation: 'Triple pay: 300% when two regular holidays fall on the exact same calendar day.',
+  },
+  {
+    benefit: 'Night Shift Differential',
+    scenario: 'Worked Between 10 PM and 6 AM (Regular Shift)',
+    formula: 'Hourly Rate x 110% x number of night hours',
+    multiplierDecimal: 1.10,
+    explanation: '10% night differential attached to every hour worked between 10:00 PM and 6:00 AM.',
+  },
+  {
+    benefit: 'Night Shift Differential',
+    scenario: 'Regular OT + Night Hours',
+    formula: 'Hourly Rate x 125% x 110% x number of night hours',
+    multiplierDecimal: 1.375,
+    explanation: 'Night shift differential computed upon the overtime rate (1.25 x 1.10 = 137.5%).',
+  },
+  {
+    benefit: 'Night Shift Differential',
+    scenario: 'Rest Day / Holiday OT + Night Hours',
+    formula: 'Hourly Rate x 130% x 110% x number of night hours',
+    multiplierDecimal: 1.43,
+    explanation: 'Overtime on rest day/holiday performed within the 10 PM - 6 AM night window.',
+  },
+  {
+    benefit: 'Night Shift Differential',
+    scenario: 'Rest Day + Night Hours (Within 8 hrs)',
+    formula: 'Hourly Rate x 130% x 110% x number of night hours',
+    multiplierDecimal: 1.43,
+    explanation: 'Regular 8-hour shift rendered on a rest day during night differential hours (130% x 110%).',
+  },
+  {
+    benefit: 'Night Shift Differential',
+    scenario: 'Special Holiday Work + Night Hours',
+    formula: 'Hourly Rate x 130% x 110% x number of night hours',
+    multiplierDecimal: 1.43,
+    explanation: 'Special holiday regular hours falling between 10 PM and 6 AM.',
+  },
+  {
+    benefit: 'Night Shift Differential',
+    scenario: 'Special Holiday + Rest Day + Night Hours',
+    formula: 'Hourly Rate x 150% x 110% x number of night hours',
+    multiplierDecimal: 1.65,
+    explanation: 'Coinciding special holiday and rest day within 8 regular hours at night (150% x 110% = 165%).',
+  },
+  {
+    benefit: 'Night Shift Differential',
+    scenario: 'Regular Holiday Work + Night Hours',
+    formula: 'Hourly Rate x 200% x 110% x number of night hours',
+    multiplierDecimal: 2.20,
+    explanation: 'Regular holiday work falling during night hours (200% x 110% = 220%).',
+  },
+  {
+    benefit: 'Night Shift Differential',
+    scenario: 'Regular Holiday + Rest Day + Night Hours',
+    formula: 'Hourly Rate x 260% x 110% x number of night hours',
+    multiplierDecimal: 2.86,
+    explanation: 'Regular holiday falling on rest day during night hours (260% x 110% = 286%).',
+  },
+  {
+    benefit: 'Night Shift Differential',
+    scenario: 'Double Holiday + Night Hours',
+    formula: 'Hourly Rate x 300% x 110% x number of night hours',
+    multiplierDecimal: 3.30,
+    explanation: 'Double regular holiday during night hours (300% x 110% = 330%).',
+  },
+  {
+    benefit: 'Night Shift Differential',
+    scenario: 'Regular Holiday + OT + Night Hours',
+    formula: 'Hourly Rate x 200% x 130% x 110% x number of night hours',
+    multiplierDecimal: 2.86,
+    explanation: 'Regular holiday overtime performed during night hours (200% x 130% x 110% = 286%).',
+  },
+  {
+    benefit: 'Night Shift Differential',
+    scenario: 'Double Holiday + Rest Day + OT + Night Hours',
+    formula: 'Hourly Rate x 300% x 130% x 130% x 110% x number of night hours',
+    multiplierDecimal: 5.577,
+    explanation: 'Double holiday on rest day overtime performed at night (300% x 130% x 130% x 110% = 557.7%).',
+  },
+];

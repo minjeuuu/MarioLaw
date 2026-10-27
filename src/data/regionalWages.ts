@@ -1,0 +1,41 @@
+import { RegionalWageEntry, KasambahayWageEntry } from '../types/laborLaw';
+
+export const REGIONAL_MINIMUM_WAGES: RegionalWageEntry[] = [
+  { region: 'NCR (National Capital Region)', effectivity: 'SEPT. 26, 2026', nonAgri: 'PHP 743 - PHP 780', agri: 'PHP 718 - PHP 755' },
+  { region: 'CAR (Cordillera Administrative Region)', effectivity: 'DEC 30, 2025', nonAgri: 'PHP 505', agri: 'PHP 505' },
+  { region: 'Region I (Ilocos Region)', effectivity: 'NOV 19, 2025', nonAgri: 'PHP 480 - PHP 505', agri: 'PHP 480 - PHP 505' },
+  { region: 'Region II (Cagayan Valley)', effectivity: 'NOV 05, 2025', nonAgri: 'PHP 500', agri: 'PHP 500' },
+  { region: 'Region III (Central Luzon)', effectivity: 'OCT 30, 2025', nonAgri: 'PHP 515 - PHP 600', agri: 'PHP 475 - PHP 570' },
+  { region: 'Region IV-A (CALABARZON)', effectivity: 'OCT 05, 2025', nonAgri: 'PHP 485 - PHP 600', agri: 'PHP 485 - PHP 600' },
+  { region: 'Region IV-B (MIMAROPA)', effectivity: 'JAN 01, 2026', nonAgri: 'PHP 455', agri: 'PHP 455' },
+  { region: 'Region V (Bicol Region)', effectivity: 'APR 08, 2026', nonAgri: 'PHP 455 - PHP 480', agri: 'PHP 455 - PHP 480' },
+  { region: 'Region VI (Western Visayas)', effectivity: 'NOV 19, 2025', nonAgri: 'PHP 520 - PHP 550', agri: 'PHP 520 - PHP 550' },
+  { region: 'Region VII (Central Visayas)', effectivity: 'OCT 14, 2026', nonAgri: 'PHP 542 - PHP 582', agri: 'PHP 542 - PHP 582' },
+  { region: 'Region VIII (Eastern Visayas)', effectivity: 'JUN 01, 2026', nonAgri: 'PHP 440 - PHP 470', agri: 'PHP 422 - PHP 452' },
+  { region: 'Region IX (Zamboanga Peninsula)', effectivity: 'JUN 01, 2026', nonAgri: 'PHP 451 - PHP 464', agri: 'PHP 426 - PHP 439' },
+  { region: 'Region X (Northern Mindanao)', effectivity: 'MAY 01, 2026', nonAgri: 'PHP 485 - PHP 500', agri: 'PHP 471 - PHP 486' },
+  { region: 'Region XI (Davao Region)', effectivity: 'MAR 13, 2026', nonAgri: 'PHP 525 - PHP 540', agri: 'PHP 515 - PHP 525' },
+  { region: 'Region XII (SOCCSKSARGEN)', effectivity: 'NOV 02, 2025', nonAgri: 'PHP 443 - PHP 460', agri: 'PHP 433 - PHP 450' },
+  { region: 'Region XIII (Caraga)', effectivity: 'MAY 01, 2026', nonAgri: 'PHP 455 - PHP 475', agri: 'PHP 455 - PHP 475' },
+  { region: 'BARMM (Bangsamoro)', effectivity: 'AUG 06, 2026', nonAgri: 'PHP 426 - PHP 461', agri: 'PHP 401 - PHP 436' },
+];
+
+export const KASAMBAHAY_MINIMUM_WAGES: KasambahayWageEntry[] = [
+  { region: 'NCR (National Capital Region)', effectivity: 'FEB 07, 2026', minimumWage: 'PHP 7,800 / month' },
+  { region: 'CAR (Cordillera Administrative Region)', effectivity: 'DEC 30, 2025', minimumWage: 'PHP 6,600 / month' },
+  { region: 'Region I (Ilocos Region)', effectivity: 'NOV 19, 2025', minimumWage: 'PHP 6,700 / month' },
+  { region: 'Region II (Cagayan Valley)', effectivity: 'NOV 05, 2025', minimumWage: 'PHP 6,500 / month' },
+  { region: 'Region III (Central Luzon)', effectivity: 'OCT 30, 2025', minimumWage: 'PHP 6,500 / month' },
+  { region: 'Region IV-A (CALABARZON)', effectivity: 'MAR 07, 2025', minimumWage: 'PHP 6,750 / month' },
+  { region: 'Region IV-B (MIMAROPA)', effectivity: 'JAN 01, 2026', minimumWage: 'PHP 7,000 / month' },
+  { region: 'Region V (Bicol Region)', effectivity: 'APR 05, 2025', minimumWage: 'PHP 6,000 / month' },
+  { region: 'Region VI (Western Visayas)', effectivity: 'NOV 19, 2025', minimumWage: 'PHP 6,500 / month' },
+  { region: 'Region VII (Central Visayas)', effectivity: 'OCT 14, 2026', minimumWage: 'PHP 7,500 / month' },
+  { region: 'Region VIII (Eastern Visayas)', effectivity: 'DEC 08, 2025', minimumWage: 'PHP 5,800 - PHP 6,400 / month' },
+  { region: 'Region IX (Zamboanga Peninsula)', effectivity: 'MAY 20, 2026', minimumWage: 'PHP 5,500 - PHP 6,000 / month' },
+  { region: 'Region X (Northern Mindanao)', effectivity: 'JAN 16, 2026', minimumWage: 'PHP 6,500 / month' },
+  { region: 'Region XI (Davao Region)', effectivity: 'MAR 13, 2026', minimumWage: 'PHP 6,500 / month' },
+  { region: 'Region XII (SOCCSKSARGEN)', effectivity: 'NOV 02, 2025', minimumWage: 'PHP 6,000 / month' },
+  { region: 'Region XIII (Caraga)', effectivity: 'JAN 03, 2026', minimumWage: 'PHP 6,500 / month' },
+  { region: 'BARMM (Bangsamoro)', effectivity: 'JAN 08, 2026', minimumWage: 'PHP 5,500 / month' },
+];
